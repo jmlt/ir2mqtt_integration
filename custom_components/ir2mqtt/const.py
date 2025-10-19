@@ -6,7 +6,7 @@ DEVICE_INFO = {
     "name": "iRacing Telemetry",
     "manufacturer": "iR2mqtt",
     "model": "iR2mqtt Data Feed",
-    "sw_version": "1.3.1",
+    "sw_version": "1.3.2",
 }
 
 SENSOR_DEFINITIONS = {
@@ -208,4 +208,5 @@ BINARY_SENSOR_DEFINITIONS = {
         "value_template": "{{ 'Go' in value_json.active_lights }}",
         "icon": "mdi:traffic-light",
     },
+
 }
