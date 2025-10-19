@@ -1,6 +1,4 @@
 {
-  "name": "iR2mqtt",
-  "category": "integration",
-  "repo": "jmlt/ir2mqtt_integration",
-  "codeowners": ["@jmlt"]
+    "name": "iR2mqtt",
+    "country": ["PT"]
 }
