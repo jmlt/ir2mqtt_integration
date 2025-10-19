@@ -1,0 +1,16 @@
+{
+  "domain": "ir2mqtt",
+  "name": "iR2mqtt",
+  "version": "1.3.1",
+  "documentation": "https://github.com/jmlt/ir2mqtt_integration",
+  "config_flow": true,
+  "iot_class": "local_push",
+  "integration_type": "service",
+  "dependencies": [
+    "mqtt"
+  ],
+  "codeowners": [
+    "@jmlt"
+  ],
+  "issue_tracker": "https://github.com/jmlt/ir2mqtt_integration/issues"
+}

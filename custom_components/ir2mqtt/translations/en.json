@@ -1,0 +1,16 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "iR2mqtt setup",
+        "description": "Enter the MQTT topic prefix. Default is iracing. The integration will automatically create all sensors. They will appear as unavailable in HA until the game is running.",
+        "data": {
+          "topic_prefix": "MQTT Topic Prefix"
+        }
+      }
+    },
+    "abort": {
+        "single_instance_allowed": "Only a single instance of iR2mqtt can be configured."
+    }
+  }
+}
