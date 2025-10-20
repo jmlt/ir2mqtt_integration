@@ -10,7 +10,7 @@ Home Assistant integration for [iR2mqtt](https://github.com/jmlt/ir2mqtt). Autom
 
 ## ✨ Features
 
-* **Automatic Discovery (MQTT Discovery):** Automatically creates and configures dozens of sensors and binary sensors related to iRacing telemetry.  
+* **Automatic Discovery:** Automatically creates and configures sensors and binary sensors related to iRacing telemetry.  
 * **Unified Device:** All entities are grouped under a single “iRacing Telemetry” device for a clean, organized structure inside Home Assistant.  
 * **Included Sensors:**
   * **Sensors:** Speed (m/s, km/h, mph), RPM, Gear, Fuel Level, Current Lap, Session Time, Session Type, Incidents, Start Lights, and more.
@@ -66,6 +66,10 @@ Entities will initially appear as “Unavailable”. They will automatically upd
 
 ---
 
+## Home Assistant Community Post
+https://community.home-assistant.io/t/ir2mqtt-bring-iracing-live-telemetry-to-home-assistant/901589
+
+---
 ## ⚠️ Disclaimer
 
 This project is an **unofficial community integration** and is **not affiliated, associated, authorized, endorsed by, or in any way officially connected with**  
