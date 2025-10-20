@@ -36,8 +36,8 @@ To use this integration, you must have:
    - **Repository URL:** Paste the URL of this GitHub repository <pre>https://github.com/jmlt/ir2mqtt_integration/</pre>
    - **Category:** Select `Integration`.
    - Click **Add**.
-2. Search for “iR2mqtt” in the HACS store and click **Install**.  
-3. Restart Home Assistant.
+2. Restart Home Assistant. 
+3. Proceed to Configuration
 
 <details>
 <summary>Without HACS</summary>
