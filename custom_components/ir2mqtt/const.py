@@ -6,7 +6,7 @@ DEVICE_INFO = {
     "name": "iRacing Telemetry",
     "manufacturer": "iR2mqtt",
     "model": "iR2mqtt Data Feed",
-    "sw_version": "1.3.2",
+    "sw_version": "1.3.3",
 }
 
 SENSOR_DEFINITIONS = {
@@ -105,108 +105,109 @@ SENSOR_DEFINITIONS = {
 BINARY_SENSOR_DEFINITIONS = {
     "on_pit_road": {
         "name": "On Pit Road",
-        "value_template": "{{ value_json.on_pit_road }}",
+        "value_template": "{{ value_json.get('on_pit_road', False) }}",
         "icon": "mdi:gauge",
     },
+    
     "flag_checkered": {
         "name": "Checkered Flag",
-        "value_template": "{{ 'Checkered' in value_json.active_flags }}",
+        "value_template": "{{ 'Checkered' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag-checkered",
     },
     "flag_white": {
         "name": "White Flag",
-        "value_template": "{{ 'White' in value_json.active_flags }}",
+        "value_template": "{{ 'White' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag-outline",
     },
     "flag_green": {
         "name": "Green Flag",
-        "value_template": "{{ 'Green' in value_json.active_flags }}",
+        "value_template": "{{ 'Green' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag-variant",
     },
     "flag_yellow": {
         "name": "Yellow Flag",
-        "value_template": "{{ 'Yellow' in value_json.active_flags }}",
+        "value_template": "{{ 'Yellow' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_red": {
         "name": "Red Flag",
-        "value_template": "{{ 'Red' in value_json.active_flags }}",
+        "value_template": "{{ 'Red' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_blue": {
         "name": "Blue Flag",
-        "value_template": "{{ 'Blue' in value_json.active_flags }}",
+        "value_template": "{{ 'Blue' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_debris": {
         "name": "Debris Flag",
-        "value_template": "{{ 'Debris' in value_json.active_flags }}",
+        "value_template": "{{ 'Debris' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_crossed": {
         "name": "Crossed Flag",
-        "value_template": "{{ 'Crossed' in value_json.active_flags }}",
+        "value_template": "{{ 'Crossed' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_yellow_waving": {
         "name": "Yellow Waving Flag",
-        "value_template": "{{ 'Yellow Waving' in value_json.active_flags }}",
+        "value_template": "{{ 'Yellow Waving' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_black": {
         "name": "Black Flag",
-        "value_template": "{{ 'Black' in value_json.active_flags }}",
+        "value_template": "{{ 'Black' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_repair": {
         "name": "Repair Flag",
-        "value_template": "{{ 'Repair' in value_json.active_flags }}",
+        "value_template": "{{ 'Repair' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_caution": {
         "name": "Caution Flag",
-        "value_template": "{{ 'Caution' in value_json.active_flags }}",
+        "value_template": "{{ 'Caution' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_caution_waving": {
         "name": "Caution Waving Flag",
-        "value_template": "{{ 'Caution Waving' in value_json.active_flags }}",
+        "value_template": "{{ 'Caution Waving' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_disqualify": {
         "name": "Disqualify Flag",
-        "value_template": "{{ 'Disqualify' in value_json.active_flags }}",
+        "value_template": "{{ 'Disqualify' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_furled": {
         "name": "Furled Flag",
-        "value_template": "{{ 'Furled' in value_json.active_flags }}",
+        "value_template": "{{ 'Furled' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_green_held": {
         "name": "Green Held Flag",
-        "value_template": "{{ 'Green Held' in value_json.active_flags }}",
+        "value_template": "{{ 'Green Held' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
     "flag_random_waving": {
         "name": "Random Waving Flag",
-        "value_template": "{{ 'Random Waving' in value_json.active_flags }}",
+        "value_template": "{{ 'Random Waving' in value_json.get('active_flags', []) }}",
         "icon": "mdi:flag",
     },
+
     "light_ready": {
         "name": "Ready Light",
-        "value_template": "{{ 'Ready' in value_json.active_lights }}",
+        "value_template": "{{ 'Ready' in value_json.get('active_lights', []) }}",
         "icon": "mdi:traffic-light",
     },
     "light_set": {
         "name": "Set Light",
-        "value_template": "{{ 'Set' in value_json.active_lights }}",
+        "value_template": "{{ 'Set' in value_json.get('active_lights', []) }}",
         "icon": "mdi:traffic-light",
     },
     "light_go": {
         "name": "Go Light",
-        "value_template": "{{ 'Go' in value_json.active_lights }}",
+        "value_template": "{{ 'Go' in value_json.get('active_lights', []) }}",
         "icon": "mdi:traffic-light",
     },
-
 }
