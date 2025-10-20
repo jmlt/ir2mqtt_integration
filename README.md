@@ -1,6 +1,8 @@
 # iR2mqtt – Home Assistant Integration
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://github.com/hacs/integration)  
+![HACS Custom](https://img.shields.io/badge/HACS-Custom-orange)
+![HACS Integration](https://img.shields.io/badge/HACS-Integration-blue)
+![Release](https://img.shields.io/github/v/release/jmlt/ir2mqtt_integration)
 
 Home Assistant integration for [iR2mqtt](https://github.com/jmlt/ir2mqtt). Automatically creates iRacing telemetry sensors from MQTT data.
 
