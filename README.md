@@ -64,6 +64,8 @@ After installation and restarting Home Assistant, setup is done through the UI:
 A new device called **iRacing Telemetry** will be created immediately.  
 Entities will initially appear as “Unavailable”. They will automatically update and become active once iR2mqtt app starts publishing telemetry data.
 
+Here is an [automation](https://github.com/jmlt/ir2mqtt/blob/main/Guides/yaml/automation-example.yaml) example that controls light entity according to iracing flags.
+
 ---
 
 ## Home Assistant Community Post
