@@ -30,7 +30,7 @@ To use this integration, you must have:
 
 ## 📦 Installation (via HACS)
  
-1. **Add this repository as a Custom Repository** (until it’s officially listed in HACS):
+1. **Add this repository as a Custom Repository**
    - Go to **HACS → Integrations**.
    - Click the three-dot menu (top right) → **Custom repositories**.
    - **Repository URL:** Paste the URL of this GitHub repository <pre>https://github.com/jmlt/ir2mqtt_integration/</pre>
@@ -68,10 +68,6 @@ Here is an [automation](https://github.com/jmlt/ir2mqtt/blob/main/Guides/yaml/au
 
 ---
 
-## Home Assistant Community Post
-https://community.home-assistant.io/t/ir2mqtt-bring-iracing-live-telemetry-to-home-assistant/901589
-
----
 ## ⚠️ Disclaimer
 
 This project is an **unofficial community integration** and is **not affiliated, associated, authorized, endorsed by, or in any way officially connected with**  
@@ -83,7 +79,7 @@ The use of any trade name or trademark is solely for identification and referenc
 ---
 
 ### 🏁 Useful Links
-
+- [Home Assistant Community Post](https://community.home-assistant.io/t/ir2mqtt-bring-iracing-live-telemetry-to-home-assistant/901589)
 - [iR2mqtt App GitHub Repository](https://github.com/jmlt/ir2mqtt)  
 - [HACS Documentation](https://hacs.xyz/docs/use)  
 - [Home Assistant MQTT Integration](https://www.home-assistant.io/integrations/mqtt/)  
