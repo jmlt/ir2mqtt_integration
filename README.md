@@ -64,7 +64,272 @@ After installation and restarting Home Assistant, setup is done through the UI:
 A new device called **iRacing Telemetry** will be created immediately.  
 Entities will initially appear as “Unavailable”. They will automatically update and become active once iR2mqtt app starts publishing telemetry data.
 
-Here is an [automation](https://github.com/jmlt/ir2mqtt/blob/main/Guides/yaml/automation-example.yaml) example that controls light entity according to iracing flags.
+<details>
+<summary>Here is an automation example that controls light entity according to iracing flags.</summary>
+
+```
+alias: AUTO - iRacing v2
+description: Control light enteties according to iR2mqtt flags with priority
+triggers:
+  - entity_id:
+      - binary_sensor.iracing_telemetry_ir2mqtt_red_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_black_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_checkered_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_caution_waving_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_yellow_waving_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_caution_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_yellow_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_debris_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_blue_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_white_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_repair_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_crossed_flag
+      - binary_sensor.iracing_telemetry_ir2mqtt_on_pit_road
+      - binary_sensor.iracing_telemetry_ir2mqtt_green_flag
+    trigger: state
+actions:
+  - choose:
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_red_flag
+            state: "on"
+        sequence:
+          - repeat:
+              while:
+                - condition: state
+                  entity_id: binary_sensor.iracing_telemetry_ir2mqtt_red_flag
+                  state: "on"
+              sequence:
+                - target:
+                    entity_id: light.prateleiraescritorio
+                  data:
+                    rgb_color:
+                      - 255
+                      - 0
+                      - 0
+                    brightness_pct: 100
+                  action: light.turn_on
+                - delay:
+                    milliseconds: 500
+                - target:
+                    entity_id: light.prateleiraescritorio
+                  action: light.turn_off
+                - delay:
+                    milliseconds: 500
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_black_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            action: light.turn_off
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_checkered_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 255
+                - 255
+              brightness_pct: 100
+              effect: colorloop
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_caution_waving_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 255
+                - 0
+              brightness_pct: 100
+              effect: colorloop
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_yellow_waving_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 255
+                - 0
+              brightness_pct: 100
+              flash: short
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_caution_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 255
+                - 0
+              brightness_pct: 100
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_yellow_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 255
+                - 0
+              brightness_pct: 100
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_debris_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 165
+                - 0
+              brightness_pct: 100
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_blue_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 0
+                - 0
+                - 255
+              brightness_pct: 100
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_white_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 255
+                - 255
+              brightness_pct: 100
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_repair_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 140
+                - 0
+              brightness_pct: 100
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_crossed_flag
+            state: "on"
+        sequence:
+          - target:
+              entity_id: light.prateleiraescritorio
+            data:
+              rgb_color:
+                - 255
+                - 165
+                - 0
+              brightness_pct: 100
+              effect: colorloop
+            action: light.turn_on
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_on_pit_road
+            state: "on"
+        sequence:
+          - repeat:
+              while:
+                - condition: state
+                  entity_id: binary_sensor.iracing_telemetry_ir2mqtt_on_pit_road
+                  state: "on"
+              sequence:
+                - target:
+                    entity_id: light.prateleiraescritorio
+                  data:
+                    rgb_color:
+                      - 0
+                      - 255
+                      - 255
+                    brightness_pct: 100
+                  action: light.turn_on
+                - delay:
+                    milliseconds: 500
+                - target:
+                    entity_id: light.prateleiraescritorio
+                  action: light.turn_off
+                - delay:
+                    milliseconds: 500
+      - conditions:
+          - condition: state
+            entity_id: binary_sensor.iracing_telemetry_ir2mqtt_green_flag
+            state: "on"
+        sequence:
+          - repeat:
+              while:
+                - condition: state
+                  entity_id: binary_sensor.iracing_telemetry_ir2mqtt_green_flag
+                  state: "on"
+              sequence:
+                - target:
+                    entity_id: light.prateleiraescritorio
+                  data:
+                    rgb_color:
+                      - 0
+                      - 255
+                      - 0
+                    brightness_pct: 100
+                  action: light.turn_on
+                - delay:
+                    milliseconds: 500
+                - target:
+                    entity_id: light.prateleiraescritorio
+                  action: light.turn_off
+                - delay:
+                    milliseconds: 500
+    default:
+      - target:
+          entity_id: light.prateleiraescritorio
+        action: light.turn_off
+mode: restart
+
+```
+</details>
 
 ---
 
@@ -79,7 +344,8 @@ The use of any trade name or trademark is solely for identification and referenc
 ---
 
 ### 🏁 Useful Links
+- [Automation Example YAML](https://github.com/jmlt/ir2mqtt/blob/main/Guides/yaml/automation-example.yaml)
 - [Home Assistant Community Post](https://community.home-assistant.io/t/ir2mqtt-bring-iracing-live-telemetry-to-home-assistant/901589)
-- [iR2mqtt App GitHub Repository](https://github.com/jmlt/ir2mqtt)  
+- [iR2mqtt App GitHub Repository](https://github.com/jmlt/ir2mqtt)
 - [HACS Documentation](https://hacs.xyz/docs/use)  
 - [Home Assistant MQTT Integration](https://www.home-assistant.io/integrations/mqtt/)  
