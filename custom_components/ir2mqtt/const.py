@@ -8,7 +8,7 @@ DEVICE_INFO = {
     "name": "iRacing Telemetry",
     "manufacturer": "iR2mqtt",
     "model": "iR2mqtt Data Feed",
-    "sw_version": "1.3.5",
+    "sw_version": "1.3.6",
 }
 
 SENSOR_DEFINITIONS = {
