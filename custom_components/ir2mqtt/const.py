@@ -1,4 +1,5 @@
 
+
 DOMAIN = "ir2mqtt"
 DEFAULT_TOPIC_PREFIX = "iracing"
 
@@ -7,7 +8,7 @@ DEVICE_INFO = {
     "name": "iRacing Telemetry",
     "manufacturer": "iR2mqtt",
     "model": "iR2mqtt Data Feed",
-    "sw_version": "1.3.4",
+    "sw_version": "1.3.5",
 }
 
 SENSOR_DEFINITIONS = {
@@ -79,6 +80,21 @@ SENSOR_DEFINITIONS = {
         "name": "Session Name",
         "value_template": "{{ value_json.session_name }}",
         "icon": "mdi:format-title",
+    },
+    "driver_name": {
+        "name": "Driver Name",
+        "value_template": "{{ value_json.driver_name }}",
+        "icon": "mdi:account",
+    },
+    "team_name": {
+        "name": "Team Name",
+        "value_template": "{{ value_json.get('team_name', 'N/A') }}",
+        "icon": "mdi:account-group",
+    },
+    "driving_state": {
+        "name": "Driving State",
+        "value_template": "{{ value_json.get('driving_state', 'Menu') }}",
+        "icon": "mdi:steering",
     },
     "active_flag": {
         "name": "Active Flag",
@@ -248,3 +264,4 @@ BINARY_SENSOR_DEFINITIONS = {
         "icon": "mdi:traffic-light",
     },
 }
+
