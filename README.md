@@ -8,8 +8,8 @@ Home Assistant integration for [iR2mqtt](https://github.com/jmlt/ir2mqtt). Autom
 
 ---
 
-<img width="1046" height="328" alt="ir3" src="https://github.com/user-attachments/assets/93c0253d-9d25-457c-8fc1-65d6018544fb" />
-<img width="1579" height="614" alt="ir4" src="https://github.com/user-attachments/assets/ba99282c-c87e-4f3b-8eff-5aaec16558ed" />
+<img width="1052" height="329" alt="HA" src="https://github.com/user-attachments/assets/2da33259-eedd-4f45-8ad4-7a9f041ab7b0" />
+<img width="1425" height="704" alt="sensores" src="https://github.com/user-attachments/assets/24ef993b-c586-422e-87cc-bc791cab1223" />
 
 ---
 
